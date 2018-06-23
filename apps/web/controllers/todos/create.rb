@@ -18,7 +18,7 @@ module Web::Controllers::Todos
 
       TodoRepository.new.create(params[:todo].merge(user_id: user.id))
 
-      redirect_to '/'
+      redirect_to routes.root_path
     end
   end
 end

@@ -12,7 +12,7 @@
 <% end %>
 
 <%=
-  form_for :todo, '/todos' do
+  form_for :todo, routes.todos_path do
     div class: 'input' do
       label      :title
       text_field :title
