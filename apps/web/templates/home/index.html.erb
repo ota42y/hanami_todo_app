@@ -1,13 +1,12 @@
-<h1>Todo App</h1>
-
 <h2>All todos</h2>
-
-<div id="todos">
-  <div class="todo">
-    <h3>Create Todo App</h3>
+<% if todos.any? %>
+  <div id="todos">
+    <% todos.each do |todo| %>
+      <div class="todo">
+        <h2><%= todo.title %></h2>
+      </div>
+    <% end %>
   </div>
-
-  <div class="todo">
-    <h3>Create Todo model</h3>
-  </div>
-</div>
+<% else %>
+  <p class="placeholder">There are no todos yet.</p>
+<% end %>
