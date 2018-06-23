@@ -23,7 +23,7 @@ describe Web::Views::Home::Index do
     let(:todo_repository) { TodoRepository.new }
     let(:todo1) { todo_repository.create(user_id: user.id, title: 'todo_1')}
     let(:todo2) { todo_repository.create(user_id: user.id, title: 'todo_2')}
-    let(:exposures) { Hash[todos: [todo1, todo2]] }
+    let(:exposures) { Hash[todos: [todo1, todo2], params: {}] }
 
     before do
       UserRepository.new.clear
