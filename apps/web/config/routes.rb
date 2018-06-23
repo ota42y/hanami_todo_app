@@ -4,4 +4,4 @@
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
 root to: 'home#index'
-resources :todos, only: [:new, :create]
+resources :todos, only: [:new, :create, :destroy]
