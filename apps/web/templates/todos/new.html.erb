@@ -1,0 +1,14 @@
+<h2>Add todo</h2>
+
+<%=
+  form_for :todo, '/todos' do
+    div class: 'input' do
+      label      :title
+      text_field :title
+    end
+
+    div class: 'controls' do
+      submit 'Create Todo'
+    end
+  end
+%>
