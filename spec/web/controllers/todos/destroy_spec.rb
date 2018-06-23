@@ -15,7 +15,7 @@ RSpec.describe Web::Controllers::Todos::Destroy, type: :action do
   end
 
   describe 'with valid params' do
-    let(:params) { Hash[todo: { id: todo.id }] }
+    let(:params) { Hash[id: todo.id] }
 
     it 'destroy a todo' do
       action.call(params)

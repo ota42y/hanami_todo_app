@@ -4,6 +4,15 @@
     <% todos.each do |todo| %>
       <div class="todo">
         <h2><%= todo.title %></h2>
+
+        <%=
+          form_for :todo, routes.todo_path(todo.id), method: :delete do
+            div class: 'controls' do
+              submit 'Delete'
+            end
+          end
+        %>
+
       </div>
     <% end %>
   </div>

@@ -19,10 +19,16 @@ describe Web::Views::Home::Index do
   end
 
   describe 'when there are todos' do
-    let(:user) { User.new}
-    let(:todo1) { Todo.new(user: user, title: 'todo_1')}
-    let(:todo2) { Todo.new(user: user, title: 'todo_2')}
+    let(:user) { UserRepository.new.create({})}
+    let(:todo_repository) { TodoRepository.new }
+    let(:todo1) { todo_repository.create(user_id: user.id, title: 'todo_1')}
+    let(:todo2) { todo_repository.create(user_id: user.id, title: 'todo_2')}
     let(:exposures) { Hash[todos: [todo1, todo2]] }
+
+    before do
+      UserRepository.new.clear
+      TodoRepository.new.clear
+    end
 
     it 'lists them all' do
       expect(rendered.scan(/class="todo"/).count).to eq 2
